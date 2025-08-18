@@ -38,7 +38,7 @@ document.getElementById("btnGui").onclick = () => {
         if (result.noi_dung) {
             alert(`Cám ơn bạn. Chúng tôi sẽ trả lời sớm nhất cho bạn`);
         } else {
-            alert(`Cám ơn bạn. Hiện tại việc gởi mail có sự cố, bạn có thể liên hệ với chúng tôi qua số hotline: 0909123456`);
+            alert(`Cám ơn bạn. Hiện tại việc gởi mail có sự cố, bạn có thể liên hệ với chúng tôi qua số hotline: 099999999`);
         }
         window.history.back();
     })
