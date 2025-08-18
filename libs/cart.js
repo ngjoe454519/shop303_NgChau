@@ -1,4 +1,4 @@
-let URL_IMG="http://localhost:8080";
+let URL_IMG="https://hephucvu-1k69.onrender.com";
 let carts = [];
 let lst = {};
 /*
