@@ -1,5 +1,5 @@
-const URL_SERVICES="http://localhost:8080";
-const URL_IMG="http://localhost:8080";
+const URL_SERVICES="https://hephucvu-1k69.onrender.com";
+const URL_IMG="https://hephucvu-1k69.onrender.com";
 
 const getALL=(endPoint)=> {
     return new Promise((resolve, reject) => {
