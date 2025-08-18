@@ -1,0 +1,170 @@
+<script>
+    if (sessionStorage.getItem("carts") == undefined) {
+        window.history.back();
+    }
+</script>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Carts - Shop 303</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- fontAwesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- myStyle CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Tiêu đề trang -->
+    <div class="jumbotron jumbotron-fluid font-Pacifico-Regular" id="thCuaHang"></div>
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href=".">Shop 303</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <!-- <i class="fa fa-apple" aria-hidden="true"></i> -->
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../home/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/">About</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="javaScript:void(0)" id="dropdownId" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Products
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="../tivi/">Tivi</a>
+                        <a class="dropdown-item" href="../mobile/">Mobile</a>
+                        <a class="dropdown-item" href="../food/">Food</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact/">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Card -->
+    <div class="container-fluid">
+        <div class="row p-5">
+            <div class="col-12 col-md-8 col-xl-8">
+                <h4 class="bg-success text-white p-2">Giỏ hàng của bạn</h4>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="text-center text-nowrap">
+                                <th>Hình</th>
+                                <th>Tên</th>
+                                <th>Số lượng</th>
+                                <th>Đơn giá Bán</th>
+                                <th>Thành tiền</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody id="thGiohangMua"></tbody>
+
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 col-xl-4">
+                <h4 class="badge-success text-white p-2">Thông tin của bạn</h4>
+                <div class="form-group">
+                    <label for="hoTen">Họ tên:</label>
+                    <input type="text" class="form-control" placeholder="Họ tên" id="hoTen">
+                </div>
+                <div class="form-group">
+                    <label for="tel">Điện thoại:</label>
+                    <input type="text" class="form-control" placeholder="Điện thoại" id="dienThoai">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" placeholder="Email" id="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="ngayGiaoHang">Ngày Giao hàng:</label>
+                    <input type="date" class="form-control" placeholder="Ngày Giao hàng" id="ngayGiaoHang">
+                </div>
+                <div class="form-group">
+                    <label for="thDiaChi">Địa chỉ:</label>
+                    <textarea class="form-control" name="" id="thDiaChi" placeholder="Địa chỉ giao hàng"></textarea>
+                </div>
+                <div class="text-right p-2 form-group">
+                    <button class="btn btn-sm btn-primary" id="thMuaTiep" onclick="window.history.back()">Mua
+                        tiếp</button>
+                    <button class="btn btn-sm btn-danger d-none" id="thDongyLoad" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Đặt hàng ...
+                    </button>
+                    <button class="btn btn-sm btn-danger" id="thDongy">Đặt hàng</button>
+                    <button class="btn btn-sm btn-primary" id="thXoa" onclick="xoaGiohang()">Xóa Giỏ hàng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center bg-dark text-white p-3 h5">
+                Designer Khóa 301 - Trung Tâm Tin Học - 2025
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="../libs/cuaHang.js"></script>
+    <script src="../libs/cart.js"></script>
+    <script type="module">
+        import { apiDathang } from "../api/urlAPI.js";
+        if (sessionStorage.getItem("carts") != undefined) {
+            carts = JSON.parse(sessionStorage.getItem("carts"));
+            xuatSanphamMua(carts);
+        }
+
+        document.getElementById("thDongy").onclick = () => {
+            document.getElementById("thDongy").classList.add("d-none");
+            document.getElementById("thDongyLoad").classList.remove("d-none");
+            let dsDonhang = datHang();
+            console.log(dsDonhang)
+            apiDathang(dsDonhang).then((result) => {
+                console.log(result)
+                // Gởi mail 
+                alert('Cám ơn bạn đặt hàng.\nChúng tôi sẽ giao hàng cho bạn\nTrong thới gian sớm nhất');
+                sessionStorage.removeItem("carts");
+                window.history.back();
+            }).catch((err) => {
+                console.log(err)
+            });
+        }
+
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop 303 - Home</title>
+    <link rel="shortcut icon" href="../ico/favicon.ico" type="image/x-icon">
+    <!-- bootstrap 4 -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- Style css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Font Awesome 4 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- <div id="thLoad" style="display: table-cell; width: 100%; height:300px; vertical-align: middle;"></div> -->
+
+    <!-- Header: Logo Cty, Slogan, Địa chỉ, điện thoại, Email ... -->
+    <div class="jumbotron jumbotron-fluid font-Pacifico-Regular" id="thCuaHang"></div>
+    <!-- Menu: navbar -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href=".">Shop 303</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href=".">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="javaScript: void(0)" id="dropdownId"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Products
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="../tivi/">Tivi</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../mobile/">Mobile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="../food/">Food</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../contact/">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="javascript:void(0)" onclick="openCart()" class="btn btn-sm btn-danger" title="Open Cart">
+                    <span style="text-decoration: underline;" id="Th_Gio_hang">0</span> <i class="fa fa-shopping-basket"
+                        aria-hidden="true"></i>
+                </a>
+            </form>
+        </div>
+    </nav>
+    <!-- Content: (Không chia cột) Giới thiệu sản phẩm: Mobile, Tivi, Food hiển thị 4 sản phẩm (Hình, tên, giá, ...) -->
+    <div class="container">
+        <h4 class="text-info border-bottom font-Sansation-Bold">Tivi</h4>
+        <div class="row" id="thListTivi"></div>
+        <h4 class="text-info border-bottom font-Sansation-Bold">Mobile</h4>
+        <div class="row" id="thListMobile"></div>
+        <h4 class="text-info border-bottom font-Sansation-Bold">Food</h4>
+        <div class="row" id="thListFood"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center bg-teal text-white p-3 lead">
+                Lập trình viên javaScript 303
+            </div>
+        </div>
+    </div>
+    <!-- Footer: Giới thiệu Cty, cá nhân thiết kế trang  -->
+    <script src="../js/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="../js/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script type="module" src="../libs/cuaHang.js"></script>
+    <script src="../libs/cart.js"></script>
+    <script src="../libs/modal.js"></script>
+
+    <script type="module" src="../libs/home.js"></script>
+    <script>
+        if (sessionStorage.getItem("carts") != undefined) {
+            carts = JSON.parse(sessionStorage.getItem("carts"))
+            Th_Gio_hang.innerHTML = carts.length;
+        }
+    </script>
+    <!-- Button trigger modal -->
+    <button type="button" id="btnLoadData" class="btn btn-primary btn-lg d-none" data-toggle="modal" data-target="#modelIdLoad">
+        Launch
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modelIdLoad" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div> -->
+                <div class="modal-body">
+                    <div class="d-flex align-items-center">
+                        <strong>Loading...</strong>
+                        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <div class="modal-footer  d-none">
+                    <button type="button" id="btnCloseLoadData" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
