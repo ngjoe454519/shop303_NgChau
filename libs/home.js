@@ -1,4 +1,4 @@
-import { getALL, URL_IMG } from "../api/urlAPI.js";
+import { getALL, URL_IMG } from "../note/urlAPI.js";
 let lstHome = [];
 const xuatSanPhamBanChay = (elementID,nhom=1) => {
     let html = ``;
