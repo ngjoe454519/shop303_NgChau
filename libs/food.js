@@ -21,19 +21,19 @@ const xuatChude = () => {
 const xuatDanhsachFood = (elementID) => {
     let html = ``;
     lstTmp.forEach((item) => {
-        html += `<div class="col-6 col-md-3 col-xl-3">
-                <div class="card pt-2 mb-2">
-                    <img class="card-img-top img-fluid" src="${URL_IMG}/${item.Ma_so}.png" alt="">
-                    <div class="card-body">
-                        <h6 class="card-title text-gray">${item.Ten}</h6>
-                        <p class="card-text text-danger">Giá: ${item.Don_gia_Ban.toLocaleString()}<sup>đ</sup> </p>
-                        <h6 class="text-gray">${item.Nhom.Ten}</h6>
+        html += `<div class="col-6 col-md-3 col-xl-3 mb-3">
+                <div class="card mobile-card pt-2">
+                    <img class="card-img-top img-fluid" src="${URL_IMG}/${item.Ma_so}.png" alt="${item.Ten}">
+                    <div class="card-body text-center">
+                        <h6 class="card-title">${item.Ten}</h6>
+                        <span class="badge-nhom">${item.Nhom.Ten}</span>
+                        <p class="card-text">${item.Don_gia_Ban.toLocaleString()}<sup>đ</sup></p>
                     </div>
-                    <div class="card-footer text-right">
-                        <a href="javascript:void(0)" onclick="showModal(this)" class="btn btn-sm btn-success" title="Read More ...">
+                    <div class="card-footer text-center">
+                        <a href="javascript:void(0)" onclick="showModal(this)" class="btn btn-sm btn-success" title="Xem chi tiết">
                             <i class="fa fa-file-text" aria-hidden="true"></i>
                         </a>
-                        <a href="javascript:void(0)" onclick="addToCart('${item.Ma_so}',3)" class="btn btn-sm btn-danger" title="Add to Cart">
+                        <a href="javascript:void(0)" onclick="addToCart('${item.Ma_so}',3)" class="btn btn-sm btn-danger" title="Thêm vào giỏ">
                             <i class="fa fa-shopping-basket" aria-hidden="true"></i>
                         </a>
                     </div>

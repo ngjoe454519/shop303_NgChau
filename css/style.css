@@ -1,3 +1,395 @@
+/* Custom Loading Spinner */
+.custom-loading-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.7);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.custom-loading-spinner {
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 18px;
+}
+.custom-loading-text {
+    font-size: 1.25rem;
+    color: #ff5e62;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    letter-spacing: 1px;
+    animation: loading-blink 1.2s infinite;
+}
+@keyframes loading-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+/* Carousel Custom */
+.custom-carousel {
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 18px;
+}
+.custom-carousel .carousel-item img {
+    border-radius: 18px;
+    object-fit: contain;
+    height: 220px;
+    background: #f8fafd;
+    transition: transform 0.25s;
+}
+.custom-carousel .carousel-item.active img {
+    transform: scale(1.04);
+}
+.custom-carousel .carousel-caption {
+    background: linear-gradient(90deg,rgba(0,0,0,0.45),rgba(0,0,0,0.18));
+    border-radius: 12px;
+    padding: 12px 18px 10px 18px;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.13);
+}
+.custom-carousel .carousel-caption h4 {
+    color: #ffd700;
+    font-size: 1.25rem;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    margin-bottom: 0.3rem;
+    text-shadow: 0 2px 8px #232526;
+}
+.custom-carousel .carousel-caption p {
+    color: #fff;
+    font-size: 1.08rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-shadow: 0 2px 8px #232526;
+}
+.custom-carousel .carousel-control-prev, .custom-carousel .carousel-control-next {
+    filter: drop-shadow(0 2px 8px #23252633);
+}
+/* Banner Intro Highlight */
+.banner-intro {
+    background: rgba(255,255,255,0.18);
+    border-radius: 22px;
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.13);
+    padding: 32px 24px 24px 24px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    text-align: center;
+    color: #232526;
+    border: 1.5px solid #fffbe7;
+}
+.shop-title {
+    font-family: 'Pacifico', cursive, 'Segoe UI', Arial, sans-serif;
+    font-size: 2.9rem;
+    background: rgb(5, 255, 118);
+    color: #eeff00;
+    text-shadow: 0 2px 8px rgba(24, 0, 243, 0.8);
+    padding: 0.2rem 0.5rem;
+    background-clip: text;
+  
+    margin-bottom: 0.5rem;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+#dienthoai, #diachi, #email {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    margin-bottom: 0.5rem;
+}
+.banner-intro .lead {
+    font-size: 1.18rem;
+    color: #232526;
+    margin-bottom: 0.4rem;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    text-shadow: 0 2px 8px #fffbe7;
+}
+.banner-intro .lead .fa {
+    color: #ffd700;
+    margin-right: 7px;
+}
+.banner-intro .contact-info {
+    margin-top: 10px;
+    font-size: 1.08rem;
+    color: #00b894;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+}
+/* Card Mobile Custom */
+.mobile-card {
+    border-radius: 16px !important;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.09);
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: none;
+    background: #fff;
+    overflow: hidden;
+    position: relative;
+}
+.mobile-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.13);
+    border: 1.5px solid #ffd700;
+}
+.mobile-card .card-img-top {
+    border-radius: 12px;
+    background: #f8fafd;
+    padding: 8px;
+    height: 140px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+.mobile-card .card-title {
+    font-size: 1.08rem;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    color: #232526;
+    margin-bottom: 4px;
+}
+.mobile-card .card-text {
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #ff5e62 !important;
+    margin-bottom: 2px;
+}
+.mobile-card .badge-nhom {
+    background: #ffd700;
+    color: #232526;
+    font-size: 0.95em;
+    border-radius: 8px;
+    padding: 2px 10px;
+    margin-bottom: 2px;
+    display: inline-block;
+}
+.mobile-card .card-footer {
+    background: transparent;
+    border-top: none;
+    padding-top: 0.3rem;
+}
+.mobile-card .btn-success, .mobile-card .btn-danger {
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    margin-left: 2px;
+    margin-right: 2px;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+.mobile-card .btn-success:hover {
+    background: #00b894;
+    color: #fff;
+    box-shadow: 0 2px 8px #00b89433;
+}
+.mobile-card .btn-danger:hover {
+    background: #ffd700;
+    color: #232526;
+    box-shadow: 0 2px 8px #ffd70055;
+}
+/* Sidebar & Content Mobile Page */
+.mobile-sidebar {
+    background: #f8fafd;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+    padding: 22px 18px 18px 18px;
+    margin-bottom: 18px;
+    min-height: 320px;
+}
+.mobile-sidebar h4 {
+    font-size: 1.15rem;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    color: #00b894;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.mobile-sidebar .list-group {
+    margin-bottom: 18px;
+}
+.mobile-sidebar .list-group-item {
+    border-radius: 8px;
+    margin-bottom: 6px;
+    transition: background 0.2s, color 0.2s;
+}
+.mobile-sidebar .list-group-item:hover, .mobile-sidebar .list-group-item.active {
+    background: #ffd700;
+    color: #232526;
+}
+.mobile-sidebar #thQuangCao {
+    background: #fffbe7;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px 0 rgba(255,215,0,0.08);
+    padding: 10px 8px;
+    min-height: 60px;
+}
+.mobile-content {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.07);
+    padding: 22px 18px 18px 18px;
+    margin-bottom: 18px;
+}
+.mobile-content h4 {
+    font-size: 1.18rem;
+    color: #ff5e62;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+/* Filter/Search Container Custom */
+.filter-container {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.08);
+    padding: 18px 18px 10px 18px;
+    margin-bottom: 22px;
+    margin-top: 10px;
+}
+.filter-container .btn-danger {
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #ff5e6233;
+}
+.filter-container .btn-danger:hover {
+    background: #ffd700;
+    color: #232526;
+    box-shadow: 0 4px 16px #ffd70055;
+}
+.filter-container input[type="text"] {
+    border-radius: 8px;
+    border: 1px solid #00b894;
+    background: #f8fafd;
+    font-size: 1rem;
+    padding: 6px 12px;
+    margin-right: 6px;
+}
+/* Navbar Custom Style */
+.navbar {
+    border-radius: 14px;
+    box-shadow: 0 4px 18px 0 rgba(0,0,0,0.13);
+    background: linear-gradient(90deg, #232526 0%, #414345 100%) !important;
+    margin-bottom: 18px;
+    padding: 0.5rem 1.2rem;
+}
+.navbar-brand {
+    font-family: 'Pacifico', cursive, 'Segoe UI', Arial, sans-serif;
+    font-size: 1.7rem;
+    color: #ffd700 !important;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px #222;
+}
+.navbar-nav .nav-link {
+    color: #fff !important;
+    font-size: 1.08rem;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    margin-right: 8px;
+    transition: color 0.2s, background 0.2s;
+    border-radius: 6px;
+    padding: 7px 14px;
+}
+.navbar-nav .nav-link:hover, .navbar-nav .nav-item.active .nav-link {
+    color: #ffd700 !important;
+    background: rgba(255,255,255,0.08);
+}
+.navbar .dropdown-menu {
+    border-radius: 10px;
+    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.13);
+    background: #232526;
+}
+.navbar .dropdown-item {
+    color: #fff;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    transition: background 0.2s, color 0.2s;
+}
+.navbar .dropdown-item:hover {
+    background: #ffd700;
+    color: #232526;
+}
+.navbar .btn-danger {
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px #ff5e6233;
+}
+/* Banner Home */
+.banner-home {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    margin-top: 1px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 6px 32px 0 rgba(0,0,0,0.12);
+}
+.banner-img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    filter: brightness(0.7) blur(1px);
+}
+.banner-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-shadow: 0 2px 12px #000;
+    background: linear-gradient(90deg,rgba(0,0,0,0.25),rgba(0,0,0,0.15));
+}
+.banner-title {
+    font-size: 2.5rem;
+    font-family: 'Pacifico', cursive, 'Segoe UI', Arial, sans-serif;
+    margin-bottom: 0.5rem;
+}
+.shop-highlight {
+    color: #ffd700;
+    text-shadow: 0 2px 12px #ff5e62;
+}
+.banner-slogan {
+    font-size: 1.2rem;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    margin-bottom: 0;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.6rem;
+    font-family: 'font-Sansation-Bold', Arial, sans-serif;
+    color: #00b894;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.section-title i {
+    color: #ff5e62;
+    font-size: 1.2em;
+}
+
+/* Product Row */
+.product-row {
+    margin-bottom: 18px;
+}
+
+/* Footer signature */
+.footer-signature {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #00c3ff 0%, #ffff1c 100%);
+    color: #333 !important;
+    text-shadow: none;
+    border-radius: 0 0 18px 18px;
+}
 /* Welcome Section Enhancement */
 .welcome-title {
     font-family: 'Pacifico', cursive, 'Segoe UI', Arial, sans-serif;

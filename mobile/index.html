@@ -15,11 +15,25 @@
 </head>
 
 <body>
-    <!-- Header: Logo Cty, Slogan, Địa chỉ, điện thoại, Email ... -->
-    <div class="jumbotron jumbotron-fluid font-Pacifico-Regular" id="thCuaHang"></div>
+    <!-- Banner  -->
+    <div class="banner-home mb-4">
+
+
+        <img src="../images/congty.jpg" alt="Shop 303 Banner" class="img-fluid rounded shadow banner-img">
+        <div class="banner-overlay">
+            <h1 class="shop-title"><i class="fa fa-shopping-bag"></i> <label id="tencuahang">Shop 303</label></h1>
+            <p class="lead" id="thCuaHang"><i class="fa fa-smile-o"></i> Chào mừng bạn đến với Shop 303</p>
+            <p class="lead" id="diachi"><i class="fa fa-map-marker"></i> Chúng tôi cam kết mang đến cho bạn những sản
+                phẩm chất lượng nhất</p>
+            <p class="lead" id="dienthoai"><i class="fa fa-star"></i> Hãy cùng khám phá các sản phẩm nổi bật của chúng
+                tôi!</p>
+            <p class="lead contact-info" id="email"><i class="fa fa-envelope"></i> shop303@example.com</p>
+        </div>
+    </div>
+   
     <!-- Menu: navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href=".">Shop 303</a>
+         <a class="navbar-brand" href=".">Store Châu Nguyễn</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -27,20 +41,20 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="../home/">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../home/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../about/">About</a>
                 </li>
                 <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="javaScript: void(0)" id="dropdownId"
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="dropdownId"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Products
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownId">
                         <a class="dropdown-item" href="../tivi/">Tivi</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href=".">Mobile</a>
+                        <a class="dropdown-item active" href="./">Mobile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="../food/">Food</a>
                     </div>
@@ -58,14 +72,14 @@
         </div>
     </nav>
     <!-- Chức năng tra cứu: Sắp xếp Giá, Tên, Tìm kiếm.... -->
-    <div class="container mt-2 mb-2">
-        <div class="row bg-light">
-            <div class="col-6 col-md-6 col-xl-6">
-                <button class="btn btn-sm btn-danger" id="btnGia" sort="1">Giá &DownArrow;</button>
+    <div class="container filter-container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6 mb-2 mb-md-0">
+                <button class="btn btn-sm btn-danger mr-2" id="btnGia" sort="1">Giá &DownArrow;</button>
                 <button class="btn btn-sm btn-danger" id="btnTen" sort="1">Tên &DownArrow;</button>
             </div>
-            <div class="col-6 col-md-6 col-xl-6">
-                <form class="form-inline my-2 my-lg-0 search  float-right">
+            <div class="col-12 col-md-6">
+                <form class="form-inline my-2 my-lg-0 search float-md-right">
                     <input class="form-control mr-sm-2" type="text" id="thTim" placeholder="Tìm theo tên sản phẩm">
                     <button class="btn btn-sm btn-danger my-2 my-sm-0" id="btnTim" type="button">
                         <i class="fa fa-search" aria-hidden="true"></i>
@@ -77,25 +91,26 @@
     <!-- Content: (chia làm 2 cột) Left: 3 Center 9 -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-md-3 col-xl-3">
-                <h4 class="text-info border-bottom">Chủ đề</h4>
-                <div class="list-group mb-2" id="thChude"></div>
-                <h4 class="text-info border-bottom">Sản phẩm bán chạy</h4>
-                <div id="thQuangCao"></div>
+            <div class="col-12 col-md-3 col-xl-3 mb-3">
+                <div class="mobile-sidebar">
+                    <h4><i class="fa fa-list-alt"></i> Chủ đề</h4>
+                    <div class="list-group mb-2" id="thChude"></div>
+                    <h4><i class="fa fa-star"></i> Sản phẩm bán chạy</h4>
+                    <div id="thQuangCao"></div>
+                </div>
             </div>
-            <div class="col-12 col-md-9 col-xl-9">
-                <div class="row">
-                    <h4 class="text-info border-bottom" id="thTieude">Danh sách Mobile</h4>
+            <div class="col-12 col-md-9 col-xl-9 mb-3">
+                <div class="mobile-content">
+                    <h4 id="thTieude"><i class="fa fa-mobile"></i> Danh sách Mobile</h4>
                     <div class="row" id="thListMobile"></div>
                 </div>
             </div>
         </div>
-
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 text-center bg-teal text-white p-3 lead">
-                Lập trình viên javaScript 303
+            <div class="col-12 text-center bg-teal text-white p-3 lead footer-signature">
+                <span>Thiết kế bởi <b>Shop 303 Team</b> &copy; 2025</span>
             </div>
         </div>
     </div>
@@ -118,27 +133,23 @@
         }
     </script>
     <!-- Button trigger modal -->
-    <button type="button" id="btnLoadData" class="btn btn-primary btn-lg d-none" data-toggle="modal" data-target="#modelIdLoad">
+    <button type="button" id="btnLoadData" class="btn btn-primary btn-lg d-none" data-toggle="modal"
+        data-target="#modelIdLoad">
         Launch
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="modelIdLoad" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade" id="modelIdLoad" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <!-- <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div> -->
-                <div class="modal-body">
-                    <div class="d-flex align-items-center">
-                        <strong>Loading...</strong>
-                        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                <div class="modal-body p-0">
+                    <div class="custom-loading-overlay">
+                        <div class="spinner-border text-danger custom-loading-spinner" role="status"></div>
+                        <div class="custom-loading-text">Đang tải dữ liệu...</div>
                     </div>
                 </div>
-                <div class="modal-footer  d-none">
+                <div class="modal-footer d-none">
                     <button type="button" id="btnCloseLoadData" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save</button>
                 </div>

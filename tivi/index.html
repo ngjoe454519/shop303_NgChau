@@ -15,11 +15,24 @@
 </head>
 
 <body>
-    <!-- Header: Logo Cty, Slogan, Địa chỉ, điện thoại, Email ... -->
-    <div class="jumbotron jumbotron-fluid font-Pacifico-Regular" id="thCuaHang"></div>
+       <!-- Banner  -->
+    <div class="banner-home mb-4">
+
+
+        <img src="../images/congty.jpg" alt="Shop 303 Banner" class="img-fluid rounded shadow banner-img">
+        <div class="banner-overlay">
+            <h1 class="shop-title"><i class="fa fa-shopping-bag"></i> <label id="tencuahang">Shop 303</label></h1>
+            <p class="lead" id="thCuaHang"><i class="fa fa-smile-o"></i> Chào mừng bạn đến với Shop 303</p>
+            <p class="lead" id="diachi"><i class="fa fa-map-marker"></i> Chúng tôi cam kết mang đến cho bạn những sản
+                phẩm chất lượng nhất</p>
+            <p class="lead" id="dienthoai"><i class="fa fa-star"></i> Hãy cùng khám phá các sản phẩm nổi bật của chúng
+                tôi!</p>
+            <p class="lead contact-info" id="email"><i class="fa fa-envelope"></i> shop303@example.com</p>
+        </div>
+    </div>
     <!-- Menu: navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand" href=".">Shop 303</a>
+         <a class="navbar-brand" href=".">Store Châu Nguyễn</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
             aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -116,29 +129,27 @@
             carts = JSON.parse(sessionStorage.getItem("carts"))
             Th_Gio_hang.innerHTML = carts.length;
         }
+        
+
     </script>
-    <!-- Button trigger modal -->
-    <button type="button" id="btnLoadData" class="btn btn-primary btn-lg d-none" data-toggle="modal" data-target="#modelIdLoad">
+  
+   <button type="button" id="btnLoadData" class="btn btn-primary btn-lg d-none" data-toggle="modal"
+        data-target="#modelIdLoad">
         Launch
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="modelIdLoad" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="modelIdLoad" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog " >
             <div class="modal-content">
-                <!-- <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div> -->
-                <div class="modal-body">
-                    <div class="d-flex align-items-center">
-                        <strong>Loading...</strong>
-                        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+                <div class="modal-body p-0 ">
+                    <div class="custom-loading-overlay">
+                        <div class="spinner-border text-danger custom-loading-spinner" role="status"></div>
+                        <div class="custom-loading-text">Đang tải dữ liệu...</div>
                     </div>
                 </div>
-                <div class="modal-footer  d-none">
+                <div class="modal-footer d-none">
                     <button type="button" id="btnCloseLoadData" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save</button>
                 </div>

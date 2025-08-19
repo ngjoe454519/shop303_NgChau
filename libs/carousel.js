@@ -2,22 +2,21 @@ import { URL_IMG } from "../api/urlAPI.js";
 
 const xuatQuangcao=(ds=[],elementID)=>{
     let html=``;
-    html+=`<div id="carouselId" class="carousel slide text-center" data-ride="carousel">`;
+    html+=`<div id="carouselId" class="carousel slide text-center custom-carousel" data-ride="carousel">`;
     html+=`<div class="carousel-inner" role="listbox">`
     ds.slice(0,3).forEach((item,index)=>{
         let clsActive=(index==0)?"active":"";
         html+=`
         <div class="carousel-item ${clsActive}">
-            <img src="${URL_IMG}/${item.Ma_so}.png" alt="First slide" class="img-fluid">
+            <img src="${URL_IMG}/${item.Ma_so}.png" alt="${item.Ten}" class="img-fluid">
             <div class="carousel-caption d-none d-md-block">
-                <h4>${item.Ten}</h4>
-                <p>${item.Don_gia_Ban.toLocaleString()}<sup>đ</sup> </p>
+                <h4><i class='fa fa-star'></i> ${item.Ten}</h4>
+                <p><i class='fa fa-money'></i> ${item.Don_gia_Ban.toLocaleString()}<sup>đ</sup></p>
             </div>
         </div>
         `
     })  
     html+=`
-    
     </div>
         <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
