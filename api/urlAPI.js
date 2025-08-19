@@ -1,7 +1,7 @@
-// const URL_SERVICES="https://hephucvu-1k69.onrender.com";
-// const URL_IMG="https://hephucvu-1k69.onrender.com";
- const URL_SERVICES="http://localhost:8088";
- const URL_IMG="http://localhost:8088";
+ const URL_SERVICES="https://hephucvu-1k69.onrender.com";
+ const URL_IMG="https://hephucvu-1k69.onrender.com";
+// const URL_SERVICES="http://localhost:8088";
+ //const URL_IMG="http://localhost:8088";
 
 
 const getALL=(endPoint)=> {
